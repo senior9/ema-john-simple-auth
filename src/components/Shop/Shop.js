@@ -4,6 +4,7 @@ import fakeData from "../fakeData/products.JSON";
 import "./Shop.css";
 import Product from "../Product/Product";
 import Cart from "../Cart/Cart";
+import { addToDatabaseCart } from "../../utilities/databaseManager";
 
 const Shop = () => {
 
@@ -13,6 +14,10 @@ const Shop = () => {
   const addHandleClick =(product)=>{
     const newCart =[...cart, product];
     setCart(newCart);
+    // session storage + local storage  function
+    const sameProduct = newCart.filter(pd=> pd.key===product.key)
+    const count = sameProduct.length
+    addToDatabaseCart(product.key,count);
   }
 // Add Cart Function 
 const [cart, setCart]=useState([]);
@@ -27,12 +32,13 @@ const [cart, setCart]=useState([]);
       .then((data) => setProduct(data));
   }, []);
   return (
-    <div className="shop-container">
+    <div className="twin-container">
       <div className="product-container">
         {first10.map((pd) => (
-          <Product 
+          <Product showAddToCart={true}
           addHandleClick={addHandleClick}
-          product={pd}>
+          product={pd} key = {pd.key} >
+            
 
           </Product>
         ))}
