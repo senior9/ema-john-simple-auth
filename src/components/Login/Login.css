@@ -1,0 +1,130 @@
+.container{
+text-align: center; 
+font-family: 'Lato';
+font-style: normal;
+font-weight: 200;
+font-size: 25px;
+line-height: 42px;
+letter-spacing: 0.0025em;
+color: #2A414F;
+}
+input{
+box-sizing: border-box;
+margin: 0 auto;
+width: 415px;
+height: 55px;
+left: 526px;
+top: 346px;
+
+border: 1px solid #95A0A7;
+border-radius: 5px;
+}
+button{
+margin: 0 auto;
+width: 415px;
+height: 55px;
+left: 526px;
+top: 549px;
+}
+button span{
+    font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 21px;
+line-height: 25px;
+letter-spacing: 0.0015em;
+
+color: #0E161A;
+}
+.login-card{
+margin: 0 auto;
+height: 600px;
+width: 500px;
+left: 484px;
+top: 208px;
+border-radius: 8px;
+border: 1px solid rgba(149, 160, 167, 1);
+
+}
+p{
+    margin: 0 auto;
+    width: 263px;
+    height: 18px;
+    left: 602px;
+    top: 613px;
+    
+    /* Body 2 */
+    
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    /* identical to box height */
+    
+    letter-spacing: 0.0025em;
+    
+    color: #2A414F;
+}
+.form-link{
+    text-decoration: none;
+    color: rgba(255, 153, 0, 1);
+}
+.divider{
+margin: 0 auto;
+width: 145px;
+height: 0px;
+left: 543px;
+top: 678px;
+border: 1px solid #95A0A7;
+background: rgba(149, 160, 167, 1);
+}
+.img{
+margin: 0 auto;
+width: 27px;
+height: 27px;
+left: 631px;
+top: 722px;
+border-radius: 5px;
+}
+.text{
+margin: 0 auto;
+width: 165px;
+height: 20px;
+left: 671px;
+top: 728px;
+
+/* Body 1 */
+
+font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 17px;
+line-height: 20px;
+letter-spacing: 0.005em;
+
+color: #2A414F;
+}
+.button-div{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.login-button{
+width: 415px;
+height: 55px;
+left: 526px;
+top: 549px;
+cursor: pointer;
+background: rgba(255, 153, 0, 0.3);
+border-radius: 5px;
+}
+.google-icon{
+    width: 415px;
+height: 55px;
+left: 526px;
+top: 549px;
+cursor: pointer;
+background: rgba(0, 255, 94, 0.5);
+border-radius: 5px;
+}

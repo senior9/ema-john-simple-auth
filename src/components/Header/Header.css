@@ -19,3 +19,9 @@
     background-color:gray;
     color:goldenrod;
 }
+.nav-item nav button{
+    text-decoration: none;
+    color: aliceblue;
+    padding: 10px;
+    margin-left: 0.5%;
+}

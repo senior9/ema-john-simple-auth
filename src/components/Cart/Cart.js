@@ -1,6 +1,6 @@
 import React from "react";
 import "./Cart.css";
-import {Link} from 'react-router-dom';
+
 
 const Cart = (props) => {
   const cart = props.cart;
@@ -11,6 +11,7 @@ const Cart = (props) => {
   for (let i = 0; i < cart.length; i++) {
     const product = cart[i];
     total = total + product.price * product.quantity;
+    debugger;
   }
 
   const formatNumber = (number) => {
@@ -56,8 +57,11 @@ const Cart = (props) => {
         </p>
         
         <br />
+        {
+          props.children
+        }
         
-        <Link to='/order'><button className="button">Place Order</button> </Link>
+        
       </div>
       
     </div>

@@ -1,9 +1,11 @@
 import React from 'react';
 import {useState,useEffect} from 'react'
-import { getDatabaseCart, removeFromDatabaseCart } from "../../utilities/databaseManager";
+import { getDatabaseCart, removeFromDatabaseCart,processOrder } from "../../utilities/databaseManager";
 import fakeData from "../../fakeData"
 import ReviewItem from '../ReviewItem/ReviewItem';
 import Cart from '../Cart/Cart';
+import happyImage from '../../images/giphy.gif'
+import { useNavigate } from 'react-router-dom';
 
 
 const Order = () => {
@@ -15,6 +17,19 @@ const Order = () => {
         setCart(newCart);
         removeFromDatabaseCart(productKey);
     } 
+    const [orderPlace,setOrderPlace] = useState(false);
+    // Place Handle CLick
+    const handlePlaceOrder= ()=>{
+        setCart([]);
+        processOrder();
+        setOrderPlace(true);
+    }
+    let thankYou ;
+    if (orderPlace) {
+        thankYou = <img style={{justifyContent:'center'}} src={happyImage} alt="" srcset="" />
+    }
+    
+const navigate =useNavigate();
     useEffect(()=>{
         // cart 
         const saveCart = getDatabaseCart();
@@ -28,6 +43,9 @@ const Order = () => {
     },[])
     return (
         <div className='twin-container'>
+        {
+            thankYou
+        }
         <div className='product-container'>
                 
         {
@@ -40,9 +58,16 @@ const Order = () => {
             }
 
         </div>
+       
         <div className='cart-container' >
-                <Cart cart={cart}> </Cart>
+                <Cart cart={cart}> 
+                <button onClick={()=>{
+                    navigate('/shipment');
+                    handlePlaceOrder();
+                }} className="button">Place Order</button>
+                </Cart>
         </div>
+       
         </div>
     );
 };
